@@ -15,11 +15,12 @@ resource "aws_key_pair" "ec2key" {
 
 
 
-resource "aws_secretsmanager_secret" "mysecrets" {
-  name = "mysecrets"
+resource "aws_secretsmanager_secret" "mysecrets2" {
+  name = "mysecrets2"
+  recovery_window_in_days = 0
 }
 
 resource "aws_secretsmanager_secret_version" "secretkey" {
-  secret_id     = aws_secretsmanager_secret.mysecrets.id
+  secret_id     = aws_secretsmanager_secret.mysecrets2.id
   secret_string = tls_private_key.instance_key.private_key_openssh
 }
