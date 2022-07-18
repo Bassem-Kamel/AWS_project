@@ -1,4 +1,4 @@
-# Terraform_project
+# Provision infrastructure on AWS
 
 ## Networking
 
