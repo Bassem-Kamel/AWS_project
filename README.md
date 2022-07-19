@@ -1,6 +1,5 @@
-# Provision infrastructure on AWS
+# Provision infrastructure on AWS ( Still in progress )
 
-### Still in progress - - - - -
 
 ## Networking
 
