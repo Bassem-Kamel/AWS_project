@@ -2,6 +2,12 @@
 resource "tls_private_key" "instance_key" {
   algorithm = "RSA"
   rsa_bits  = 4096
+
+  provisioner "local-exec" {
+
+    command = "cat ${tls_private_key.instance_key.private_key_openssh} > ./keys/ec2key"
+
+  }
 }
 
 resource "aws_key_pair" "ec2key" {
@@ -16,7 +22,7 @@ resource "aws_key_pair" "ec2key" {
 
 
 resource "aws_secretsmanager_secret" "mysecrets2" {
-  name = "mysecrets2"
+  name                    = "mysecrets2"
   recovery_window_in_days = 0
 }
 

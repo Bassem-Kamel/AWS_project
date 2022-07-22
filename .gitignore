@@ -1,3 +1,2 @@
-*.terraform
-ec2key
-.terraform*
+*.terraform*
+keys
